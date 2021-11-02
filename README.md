@@ -1,25 +1,43 @@
-# A Ruby on Rails with Postgres template on Gitpod
+# Ruby on Rails Tuotrial sample application
 
-This is a [Ruby on Rails with Postgres](https://rubyonrails.org) template configured for ephemeral development environments on [Gitpod](https://www.gitpod.io/).
+This is the sample application for 
+[*Ruby on Rails Turorial:
+Learn Web Development with Rails*](https://railstutorial.org/)
+(6th edition)
+by [Micheal Hartl](https://www.michaealhartl.com/)
 
-## Next Steps
+## License
 
-Click the button below to start a new development environment:
+All sourec code in the [Ruby on Rails Tutorial](https://www.railstutorial.org/)
+is avialable jointly under the MIT License and the Beerware License. See
+[LICENSE.md](LICENSE.md) for details
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/gitpod-io/template-ruby-on-rails-postgres)
+## Getting started
 
-## Get Started With Your Own Project
+To get started with the app, clone the repor and the install the needed gems:
 
-### A new project
+'''
+$ gem install bundler -v 2.2.17
+$ bundle _2.2.17_ config set --local withouth 'production'
+$ bundle _2.2.17 install
+'''
 
-Click the above "Open in Gitpod" button to start a new workspace. Once you're ready to push your first code changes, Gitpod will guide you to fork this project so you own it.
+Next, migrate the database:
 
-### An existing project
+'''
+$ rails db:migrate
+'''
 
-To get started with Ruby on Rails with Postgres on Gitpod, add a [`.gitpod.yml`](./.gitpod.yml) file which contains the configuration to improve the developer experience on Gitpod. To learn more, please see the [Getting Started](https://www.gitpod.io/docs/getting-started) documentation.
+Finally, run the test suite to verify that everything is working correctly:
 
-## Notes & caveats
+'''
+$ rails test
 
-* The template was generated using `rails new . -d postgres`
-* [./gitpod.yml](./.gitpod.yml) launches the rails server bound to `0.0.0.0` so that the server is accessible in Gitpod. The default configuration binds to `localhost`.
-* [config/environments/development.rb](./config/environments/development.rb) has been configured with `config.hosts.clear` to enable requests to the Gitpod subdomain. In this template the Ruby on Rails configuration interface has been set to private. If this setting is changed to public then anyone will be able to connect to the administration interface if they know the workspace name.
+If the test suite passes, you'll be ready to run the app in a local server:
+
+'''
+$ rails server
+'''
+
+For more information, see the
+[*Ruby on Rails Tutorial* book](https://www.railstutorial.org/book)
